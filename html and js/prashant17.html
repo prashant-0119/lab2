@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<body>
+    <div id="navInfo"></div>
+<script>
+    let info = "<p><b>Browser Name:</b> " + navigator.appName + "</p>" +
+               "<p><b>Browser Version:</b> " + navigator.appVersion + "</p>" +
+               "<p><b>Platform (OS):</b> " + navigator.platform + "</p>";
+    
+    document.getElementById("navInfo").innerHTML = info;
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(pos) {
+            document.getElementById("navInfo").innerHTML += "<p><b>Geolocation:</b> Lat: " + pos.coords.latitude + ", Lon: " + pos.coords.longitude + "</p>";
+        }, function(err) {
+            document.getElementById("navInfo").innerHTML += "<p><b>Geolocation:</b> Blocked/Unavailable</p>";
+        });
+    }
+</script>
+</body>
+</html>

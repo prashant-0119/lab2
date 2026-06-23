@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .num-span { padding: 5px; margin: 3px; display: inline-block; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div id="displayArea"></div>
+    <script>
+        let limit = parseInt(prompt("Enter upper range number:"));
+        let display = document.getElementById("displayArea");
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+        for (let i = 1; i <= limit; i++) {
+            let span = document.createElement("span");
+            span.className = "num-span";
+            span.textContent = i + " ";
+            if (isPrime(i)) {
+                span.style.color = "red";
+            } else if (i % 2 === 0) {
+                span.style.color = "blue";
+            } else {
+                span.style.color = "orange";
+            }
+            display.appendChild(span);
+        }
+    </script>
+</body>
+</html>

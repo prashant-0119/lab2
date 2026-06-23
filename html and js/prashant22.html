@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .thumbnails img { width: 80px; height: 60px; margin: 5px; cursor: pointer; border: 1px solid #000; }
+        .main-view img { width: 400px; height: 300px; border: 2px solid #000; }
+    </style>
+</head>
+<body>
+    <div class="main-view">
+        <img id="mainImg" src="https://picsum.photos/id/10/400/300" alt="Main View">
+    </div>
+    <div class="thumbnails">
+        <img class="thumb" src="https://picsum.photos/id/10/400/300" alt="Img1">
+        <img class="thumb" src="https://picsum.photos/id/15/400/300" alt="Img2">
+        <img class="thumb" src="https://picsum.photos/id/24/400/300" alt="Img3">
+    </div>
+    <script>
+        $(document).ready(function(){
+            $(".thumb").click(function(){
+                let selectedSrc = $(this).attr("src");
+                $("#mainImg").attr("src", selectedSrc);
+            });
+        });
+    </script>
+</body>
+</html>

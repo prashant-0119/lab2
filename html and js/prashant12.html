@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .clock-container { background-color: purple; width: fit-content; padding: 20px 40px; border-radius: 10px; text-align: center; font-family: monospace; }
+        .clock-title { color: white; margin: 0 0 10px 0; font-size: 18px; letter-spacing: 2px; }
+        .time-box { background: white; color: black; display: inline-block; padding: 10px 15px; font-size: 30px; font-weight: bold; border-radius: 5px; }
+        .colon { color: white; font-size: 30px; margin: 0 5px; vertical-align: top; line-height: 50px;}
+    </style>
+</head>
+<body>
+    <div class="clock-container">
+        <div class="clock-title">DIGITAL CLOCK</div>
+        <span id="hrs" class="time-box">00</span>
+        <span class="colon">:</span>
+        <span id="mins" class="time-box">00</span>
+        <span class="colon">:</span>
+        <span id="secs" class="time-box">00</span>
+    </div>
+    <script>
+        function updateClock() {
+            let now = new Date();
+            document.getElementById("hrs").textContent = String(now.getHours()).padStart(2, '0');
+            document.getElementById("mins").textContent = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById("secs").textContent = String(now.getSeconds()).padStart(2, '0');
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

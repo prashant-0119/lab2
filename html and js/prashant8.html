@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        table { border-collapse: collapse; width: 80%; }
+        td { border: 1px solid black; padding: 8px; text-align: center; }
+    </style>
+</head>
+<body>
+    <table id="countryTable"></table>
+    <script>
+        const countries = Array.from({length: 50}, (_, i) => 'Country'+(i + 1));
+        const table = document.getElementById("countryTable");
+        let currentRow;
+        countries.forEach((country, index) => {
+            if (index % 6 === 0) {
+                currentRow = document.createElement("tr");
+                table.appendChild(currentRow);
+            }
+            let cell = document.createElement("td");
+            cell.textContent = country;
+            currentRow.appendChild(cell);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .counter-box { text-align: center; font-family: Arial; background-color: #fce4ec; padding: 20px; width: 220px; border-radius: 8px;}
+        .display { font-size: 24px; background: white; padding: 5px 20px; border-radius: 4px; margin: 10px; display: inline-block;}
+        button { font-size: 18px; padding: 5px 15px; color: white; border: none; cursor: pointer; border-radius: 4px;}
+        .btn-plus,.btn-minus { background-color: limegreen; }
+        .btn-reset { background-color: limegreen; display: block; margin: 10px auto; }
+    </style>
+</head>
+<body>
+    <div class="counter-box">
+        <h4 style="margin:0; color:red;">Counter App</h4>
+        <button class="btn-plus" onclick="changeValue(1)">+</button>
+        <span id="counterValue" class="display">0</span>
+        <button class="btn-minus" onclick="changeValue(-1)">-</button>
+        <button class="btn-reset" onclick="resetCounter()">Reset</button>
+    </div>
+    <script>
+        let count = 0;
+        const valSpan = document.getElementById("counterValue");
+        function changeValue(val) {
+            count += val;
+            valSpan.textContent = count;
+        }
+        function resetCounter() {
+            count = 0;
+            valSpan.textContent = count;
+        }
+    </script>
+</body>
+</html>

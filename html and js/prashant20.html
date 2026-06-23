@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #box { width: 150px; height: 150px; background-color: purple; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <button id="btnHide">Hide</button>
+    <button id="btnShow">Show</button>
+    <button id="btnToggle">Toggle</button>
+    <button id="btnSlideUp">Slideup</button>
+    <button id="btnSlideDown">Slidedown</button>
+    <button id="btnCss">Change CSS Color</button>
+    <div id="box">Target Div Box Element</div>
+    <script>
+        $(document).ready(function(){
+            $("#btnHide").click(function(){ $("#box").hide(500); });
+            $("#btnShow").click(function(){ $("#box").show(500); });
+            $("#btnToggle").click(function(){ $("#box").toggle(500); });
+            $("#btnSlideUp").click(function(){ $("#box").slideUp(500); });
+            $("#btnSlideDown").click(function(){ $("#box").slideDown(500); });
+            $("#btnCss").click(function(){ $("#box").css("background-color", "orange"); });
+        });
+    </script>
+</body>
+</html>

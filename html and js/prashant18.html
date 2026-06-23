@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<body>
+    <input type="text" id="urlInput" placeholder="https://example.com" value="https://">
+    <button onclick="goToTab()">Open URL in New Tab</button>
+    <script>
+        function goToTab() {
+            let destination = document.getElementById("urlInput").value.trim();
+            if(destination !== "" && destination !== "https://") {
+                window.open(destination, "_blank");
+            } else {
+                alert("Please write down a valid target destination web address!");
+            }
+        }
+    </script>
+</body>
+</html>

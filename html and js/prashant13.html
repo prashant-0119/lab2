@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<body>
+    <button onclick="createCookie()">Store Cookie</button>
+    <button onclick="readCookie()">Read Cookie</button>
+    <button onclick="deleteCookie()">Delete Cookie</button>
+    <script>
+        function createCookie() {
+            document.cookie = "username=Gengis Khan; path=/; max-age=3600";
+            alert("Cookie Stored Successfully!");
+        }
+        function readCookie() {
+            alert("Current Cookies: " + document.cookie);
+        }
+        function deleteCookie() {
+            document.cookie = "username=; path=/; max-age=0";
+            alert("Cookie Deleted Successfully!");
+        }
+    </script>
+</body>
+</html>

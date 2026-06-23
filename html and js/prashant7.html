@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .box {
+            display: inline-block; width: 40px;height: 40px;margin: 4px;text-align: center; line-height: 40px;color: black;font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+        const container = document.getElementById("container");
+        for (let i = 0; i <= 100; i++) {
+            let el = document.createElement("div");
+            el.className = "box";
+            el.textContent = i;
+            if (isPrime(i)) {
+                el.style.backgroundColor = "red"; 
+            } else if (i % 2 === 0) {
+                el.style.backgroundColor = "green"; 
+            } else {
+                el.style.backgroundColor = "yellow";
+            }
+            container.appendChild(el);
+        }
+    </script>
+</body>
+</html>
